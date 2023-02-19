@@ -105,3 +105,29 @@ a {
     color-scheme: dark;
   }
 }
+
+.m-10 {
+  margin: 10vh;
+}
+.m-1 {
+  margin: 1vh;
+}
+.p-1 {
+  padding: 1vh;
+}
+.mr-1 {
+  margin-right: 1vh;
+}
+main {
+  height: 100%;
+}
+.d-flex {
+  display: flex; 
+}
+
+.bg-color-white{
+  background-color: white;
+}
+.float-right{
+  float:right
+}
