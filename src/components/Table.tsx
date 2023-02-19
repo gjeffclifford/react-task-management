@@ -13,7 +13,6 @@ import { useRouter } from "next/router";
 
 export default function BasicTable() {
   const [search, setSearch] = React.useState("");
-
   const { data: rows, isValidating: rowsIsValidating, mutate } =
   useRequest(
     {
