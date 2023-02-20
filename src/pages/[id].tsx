@@ -28,12 +28,14 @@ const { data: task, isValidating: rowsIsValidating } =
   );
   return (
     <>
+    <div className='d-flex justify-center bg-color-white height-inherit'>
       <TaskForm
         onSubmit={onSubmit}
         task={task}
       >
 
       </TaskForm>
+    </div>
     </>
   )
 }

@@ -27,6 +27,10 @@ export default function BasicTable() {
     router.push(`${id}`)
   }
 
+  const handleCreate = () => {
+    router.push('/create')
+  }
+
   const deleteClicked = (id: any) => {
     BaseApi.delete(`${process.env.NEXT_PUBLIC_TASK_API}/v1/tasks/${id}`).then(() => {
       mutate()
@@ -41,7 +45,7 @@ export default function BasicTable() {
         color="primary"
         className='m-1 p-1'
         onClick={(e) => {
-          router.push('/create')
+          handleCreate()
         }
       }>
         Create Task

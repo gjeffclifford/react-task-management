@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import TaskForm from '@/components/TaskForm';
 import BaseApi, {useRequest} from "@/lib/_base.api";
 import { useRouter } from 'next/router';
+import Button from '@mui/material/Button';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +20,12 @@ const onSubmit = async (form: any) => {
 }
   return (
     <>
+    <div className='d-flex justify-center bg-color-white height-inherit'>
       <TaskForm
         onSubmit={onSubmit}
       >
       </TaskForm>
+    </div>
     </>
   )
 }

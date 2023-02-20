@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { useRouter } from 'next/router';
 
 interface Task {
   name: string;
@@ -15,7 +16,7 @@ interface TaskFormProps {
 
 function TaskForm(props: TaskFormProps) {
   const [form, setForm] = useState<Task>({ name: '', description: '' });
-
+  const router = useRouter();
   useEffect(() => {
     if (props.task) {
       setForm({
@@ -46,20 +47,22 @@ function TaskForm(props: TaskFormProps) {
       }}
       noValidate
       autoComplete="off"
+      className='w-100'
     >
-      <div>
+      <div 
+        >
         <TextField
           label="Task name"
           variant="filled"
           value={form.name}
           onChange={handleNameChange}
           required
+          className='w-100'
         />
       </div>
 
-      <div>
+      <div >
         <TextField
-          
           label="Description"
           variant="filled"
           multiline
@@ -67,17 +70,31 @@ function TaskForm(props: TaskFormProps) {
           value={form.description}
           onChange={handleDescriptionChange}
           required
+          className='w-100'
         />
       </div>
 
+      <Button
+        type="back"
+        variant="contained"
+        color="primary"
+        onClick={(e) => {
+          router.push('/')
+        }}
+        className="m-1"
+      >
+        back
+      </Button>  
       <Button
         type="submit"
         variant="contained"
         color="primary"
         onClick={(e) => {
-          handleSubmit(e)
-        }
-      }>
+            handleSubmit(e)
+        }}
+        disabled={form.name === ''}
+        className="m-1"
+        >
         Submit
       </Button>
     </Box>
